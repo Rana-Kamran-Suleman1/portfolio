@@ -7,12 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <canvas id="neuron-canvas"></canvas>
-        <div class="header-particles">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="circular-loader">
+                <div class="circle-ring"></div>
+                <div class="circle-ring ring-2"></div>
+                <div class="circle-ring ring-3"></div>
+                <div class="neuron-circle">
+                    <span class="c-neuron n1"></span>
+                    <span class="c-neuron n2"></span>
+                    <span class="c-neuron n3"></span>
+                    <span class="c-neuron n4"></span>
+                    <span class="c-neuron n5"></span>
+                    <span class="c-neuron n6"></span>
+                    <span class="c-neuron n7"></span>
+                    <span class="c-neuron n8"></span>
+                </div>
+                <div class="center-glow"></div>
+            </div>
         </div>
+    </div>
+
+    <header id="main-content" class="hidden">
+        <canvas id="neuron-canvas"></canvas>
         <div class="container">
             <h1>Kamran Suleman</h1>
             <p>AI/ML Intern</p>
@@ -123,6 +141,20 @@
     </footer>
 
     <script>
+        // Loading Screen Logic
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                const mainContent = document.getElementById('main-content');
+
+                loader.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+                mainContent.classList.add('visible');
+                document.body.classList.remove('loading');
+                document.body.classList.add('loaded');
+            }, 2000);
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Neural Network Animation
             const canvas = document.getElementById('neuron-canvas');
@@ -162,10 +194,8 @@
                 draw() {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(0, 217, 255, 0.9)';
+                    ctx.fillStyle = 'rgba(0, 217, 255, 0.8)';
                     ctx.fill();
-                    ctx.shadowBlur = 10;
-                    ctx.shadowColor = 'rgba(0, 217, 255, 0.8)';
                 }
             }
 
@@ -173,7 +203,7 @@
 
             function init() {
                 nodes = [];
-                const nodeCount = Math.floor(canvas.width / 10);
+                const nodeCount = Math.floor(canvas.width / 25);
                 for (let i = 0; i < nodeCount; i++) {
                     nodes.push(new Node());
                 }
@@ -186,10 +216,10 @@
                         const dy = nodes[a].y - nodes[b].y;
                         const distance = Math.sqrt(dx * dx + dy * dy);
 
-                        if (distance < 150) {
+                        if (distance < 100) {
                             ctx.beginPath();
-                            ctx.strokeStyle = `rgba(0, 217, 255, ${0.25 * (1 - distance / 150)})`;
-                            ctx.lineWidth = 1;
+                            ctx.strokeStyle = `rgba(0, 217, 255, ${0.15 * (1 - distance / 100)})`;
+                            ctx.lineWidth = 0.5;
                             ctx.moveTo(nodes[a].x, nodes[a].y);
                             ctx.lineTo(nodes[b].x, nodes[b].y);
                             ctx.stroke();
