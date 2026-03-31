@@ -1,0 +1,163 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+header .contact-info p {
+    margin: 10px 0;
+}
+
+header a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+/* About Me Section */
+.about {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Projects Section */
+.projects {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.project-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.project-item a {
+    text-decoration: none;
+    color: #1c1c1c;
+    font-weight: bold;
+}
+
+/* Skills Section */
+.skills {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.skills ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.skills li {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+/* Achievements Section */
+.achievements {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.achievements h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.achievements ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.achievements li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1em;
+}
