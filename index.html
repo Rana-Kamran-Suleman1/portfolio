@@ -8,13 +8,21 @@
 </head>
 <body>
     <header>
+        <canvas id="neuron-canvas"></canvas>
+        <div class="header-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
         <div class="container">
             <h1>Kamran Suleman</h1>
             <p>AI/ML Intern</p>
             <div class="contact-info">
                 <p>Email: ranakamransuleman@email.com</p>
                 <p>Phone: +923023354941</p>
-                <p><a href="https://linkedin.com/in/rana-kamran-suleman">LinkedIn</a> | <a href="https://github.com/Rana-Kamran-Suleman1">GitHub</a></p>
+                <p>
+                    <a href="https://linkedin.com/in/rana-kamran-suleman" target="_blank" rel="noopener">LinkedIn</a> |
+                    <a href="https://github.com/Rana-Kamran-Suleman1" target="_blank" rel="noopener">GitHub</a>
+                </p>
             </div>
         </div>
     </header>
@@ -95,8 +103,17 @@
                 <li>Employee of the Year – Awarded for high-quality work and results</li>
                 <li>Employee of the Quarter – Recognized for exceptional performance and productivity</li>
                 <li>Employee of the Month (3x) – Acknowledged for excellence in work delivery</li>
+                <li>Punctuality Awards (Multiple Times) – Acknowledged for professionalism, discipline, and reliability</li>
             </ul>
         </div>
+    </section>
+    <section id="certifications" class="certifications">
+    <div class="container">
+        <h2>Certifications</h2>
+        <ul>
+            <li><strong>AI & Machine Learning Certification</strong> – NAVTTC</li>
+        </ul>
+    </div>
     </section>
 
     <footer>
@@ -104,5 +121,97 @@
             <p>&copy; 2026 Rana Kamran Suleman. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Neural Network Animation
+            const canvas = document.getElementById('neuron-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = Math.max(500, window.innerHeight * 0.5);
+            }
+
+            resizeCanvas();
+
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                init();
+            });
+
+            class Node {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.radius = Math.random() * 2 + 1;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(0, 217, 255, 0.9)';
+                    ctx.fill();
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = 'rgba(0, 217, 255, 0.8)';
+                }
+            }
+
+            let nodes = [];
+
+            function init() {
+                nodes = [];
+                const nodeCount = Math.floor(canvas.width / 15);
+                for (let i = 0; i < nodeCount; i++) {
+                    nodes.push(new Node());
+                }
+            }
+
+            function connect() {
+                for (let a = 0; a < nodes.length; a++) {
+                    for (let b = a; b < nodes.length; b++) {
+                        const dx = nodes[a].x - nodes[b].x;
+                        const dy = nodes[a].y - nodes[b].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 120) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(0, 217, 255, ${0.2 * (1 - distance / 120)})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.moveTo(nodes[a].x, nodes[a].y);
+                            ctx.lineTo(nodes[b].x, nodes[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (let node of nodes) {
+                    node.update();
+                    node.draw();
+                }
+                connect();
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+        });
+    </script>
 </body>
 </html>
