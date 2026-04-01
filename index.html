@@ -57,44 +57,52 @@
             <h2>AI/ML Projects</h2>
             <div class="project-list">
                 <div class="project-item">
+                    <img src="images/chatbot.jpg" alt="AI-powered Chatbot" class="project-image">
                     <h3>AI-powered Chatbot</h3>
                     <p>Developed a chatbot using NLP and prompt engineering to handle user queries effectively.</p>
                     <!-- <a href="https://github.com/Rana-Kamran-Suleman1/chatbot">View Project</a> -->
                 </div>
                 <div class="project-item">
+                    <img src="images/rag-system.png" alt="Retrieval-Augmented Generation (RAG) System" class="project-image">
                     <h3>Retrieval-Augmented Generation (RAG) System</h3>
                     <p>Built a RAG system for context-aware question answering, achieving improved response accuracy.</p>
                     <!-- <a href="https://github.com/Rana-Kamran-Suleman1/rag-system">View Project</a> -->
                 </div>
                 <div class="project-item">
+                    <img src="images/proposal-generator.jpg" alt="Upwork Proposal Generator" class="project-image">
                     <h3>Upwork Proposal Generator</h3>
                     <p>Developed a system that automates personalized job proposal creation to improve submission efficiency.</p>
                     <!-- <a href="https://github.com/Rana-Kamran-Suleman1/upwork-proposal-generator">View Project</a> -->
                 </div>
                 <div class="project-item">
-                <h3>Research Agent Pro</h3>
-                <p>Developed an AI-powered Research Agent using LangChain to automate research tasks by aggregating information from multiple sources such as web search, Wikipedia, and academic research papers. Integrated tools for data extraction and response generation to assist in efficient research.</p>
-                <!-- <a href="https://github.com/Rana-Kamran-Suleman1/Research-Agent-Pro">View Project</a> -->
+                    <img src="images/research-agent.jpg" alt="Research Agent Pro" class="project-image">
+                    <h3>Research Agent Pro</h3>
+                    <p>Developed an AI-powered Research Agent using LangChain to automate research tasks by aggregating information from multiple sources such as web search, Wikipedia, and academic research papers. Integrated tools for data extraction and response generation to assist in efficient research.</p>
+                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/Research-Agent-Pro">View Project</a> -->
                 </div>
                 <div class="project-item">
-                <h3>AI Customer Support Automation Dashboard</h3>
-                <p>Developed a dashboard using AI and NLP to automate customer support tasks, including ticket classification and intelligent response generation, improving response time and customer satisfaction.</p>
-                <!-- <a href="https://github.com/Rana-Kamran-Suleman1/AI-Customer-Support-Automation-Dashboard">View Project</a> -->
+                    <img src="images/support-dashboard.jpg" alt="AI Customer Support Automation Dashboard" class="project-image">
+                    <h3>AI Customer Support Automation Dashboard</h3>
+                    <p>Developed a dashboard using AI and NLP to automate customer support tasks, including ticket classification and intelligent response generation, improving response time and customer satisfaction.</p>
+                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/AI-Customer-Support-Automation-Dashboard">View Project</a> -->
                 </div>
                 <div class="project-item">
-                <h3>AI Chatbot with RAG for Business Documents</h3>
-                <p>Developed an AI-powered chatbot using LangChain and RAG for interacting with business documents. The chatbot automatically answers queries based on document content, leveraging the RAG system to ensure accuracy and relevance in responses.</p>
-                <!-- <a href="https://github.com/Rana-Kamran-Suleman1/AI-Chatbot-with-RAG-for-Business-Documents">View Project</a> -->
+                    <img src="images/document-chatbot.jpg" alt="AI Chatbot with RAG for Business Documents" class="project-image">
+                    <h3>AI Chatbot with RAG for Business Documents</h3>
+                    <p>Developed an AI-powered chatbot using LangChain and RAG for interacting with business documents. The chatbot automatically answers queries based on document content, leveraging the RAG system to ensure accuracy and relevance in responses.</p>
+                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/AI-Chatbot-with-RAG-for-Business-Documents">View Project</a> -->
                 </div>
                 <div class="project-item">
-                <h3>Notebook to PDF Converter</h3>
-                <p>Developed a Python-based tool to convert Jupyter Notebooks into well-formatted PDF documents. The tool integrates with Pandas for data cleaning and uses FPDF for PDF formatting, making it easy to create shareable reports.</p>
-                <!-- <a href="https://github.com/Rana-Kamran-Suleman1/Notebook-to-pdf">View Project</a> -->
+                    <img src="images/notebook-pdf.jpg" alt="Notebook to PDF Converter" class="project-image">
+                    <h3>Notebook to PDF Converter</h3>
+                    <p>Developed a Python-based tool to convert Jupyter Notebooks into well-formatted PDF documents. The tool integrates with Pandas for data cleaning and uses FPDF for PDF formatting, making it easy to create shareable reports.</p>
+                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/Notebook-to-pdf">View Project</a> -->
                 </div>
                 <div class="project-item">
-                <h3>NLP Engineering</h3>
-                <p>Developed scalable NLP solutions using transformer-based models for text classification, sentiment analysis, and named entity recognition. Implemented with tools like Hugging Face, SpaCy, and Scikit-learn for real-world business applications.</p>
-                <!-- <a href="https://github.com/Rana-Kamran-Suleman1/nlp-engineering">View Project</a> -->
+                    <img src="images/nlp-engineering.jpg" alt="NLP Engineering" class="project-image">
+                    <h3>NLP Engineering</h3>
+                    <p>Developed scalable NLP solutions using transformer-based models for text classification, sentiment analysis, and named entity recognition. Implemented with tools like Hugging Face, SpaCy, and Scikit-learn for real-world business applications.</p>
+                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/nlp-engineering">View Project</a> -->
                 </div>
             </div>
         </div>
@@ -140,6 +148,12 @@
         </div>
     </footer>
 
+    <!-- Image Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
     <script>
         // Loading Screen Logic
         window.addEventListener('load', function() {
@@ -156,6 +170,36 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Lightbox functionality for project images
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const projectImages = document.querySelectorAll('.project-image');
+
+            projectImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightboxImg.src = this.src;
+                    lightboxImg.alt = this.alt;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+            });
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
             // Neural Network Animation
             const canvas = document.getElementById('neuron-canvas');
             if (!canvas) return;
