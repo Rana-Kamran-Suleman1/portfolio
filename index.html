@@ -7,8 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="c-dot"  id="c-dot"></div>
+    <div class="c-ring" id="c-ring"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav" id="sticky-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">KS</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+            </div>
+            <a href="mailto:ranakamransuleman@gmail.com" class="nav-cta">Hire Me</a>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
     <!-- Loading Screen -->
     <div id="loader">
+        <div class="loader-bg-grid"></div>
+        <div class="loader-glow-bg"></div>
         <div class="loader-content">
             <div class="circular-loader">
                 <div class="circle-ring"></div>
@@ -24,125 +51,368 @@
                     <span class="c-neuron n7"></span>
                     <span class="c-neuron n8"></span>
                 </div>
-                <div class="center-glow"></div>
+                <div class="center-initials">KS</div>
             </div>
+            <div class="loader-text">
+                <p class="loader-name">Kamran Suleman</p>
+                <p class="loader-role">AI Engineer</p>
+            </div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar"></div>
+            </div>
+            <p class="loader-status">Initializing<span class="loader-dots"></span></p>
         </div>
     </div>
 
     <header id="main-content" class="hidden">
         <canvas id="neuron-canvas"></canvas>
+        <div class="hero-grid"></div>
         <div class="container">
-            <h1>Kamran Suleman</h1>
-            <p>AI Engineer</p>
-            <div class="contact-info">
-                <p>Email: ranakamransuleman@email.com</p>
-                <p>Phone: +923023354941</p>
-                <p>
-                    <a href="https://linkedin.com/in/rana-kamran-suleman" target="_blank" rel="noopener">LinkedIn</a> |
-                    <a href="https://github.com/Rana-Kamran-Suleman1" target="_blank" rel="noopener">GitHub</a>
-                </p>
+            <div class="hero-avatar">
+                <div class="avatar-inner">KS</div>
             </div>
+            <h1>Kamran <span class="name-accent">Suleman</span></h1>
+            <p class="hero-title">
+                <span id="typing-text"></span><span class="typing-cursor">|</span>
+            </p>
+            <p class="hero-sub">Turning research into production-ready intelligent systems</p>
+            <div class="hero-tech">
+                <span>Python</span>
+                <span>LangChain</span>
+                <span>PyTorch</span>
+                <span>RAG</span>
+                <span>Computer Vision</span>
+                <span>LLMs</span>
+            </div>
+            <div class="contact-info">
+                <div class="avail-time" id="avail-time">
+                    <span class="avail-dot" id="avail-dot"></span>
+                    <span id="avail-label">Online</span>
+                    <span class="avail-sep">·</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    18 hrs/day &nbsp;·&nbsp; 9:00 AM – 3:00 AM PKT
+                </div>
+                <div class="contact-row">
+                    <a href="tel:+923023354941" class="contact-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+                        +92 302 335 4941
+                    </a>
+                    <a href="mailto:ranakamransuleman@gmail.com" class="contact-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        ranakamransuleman@gmail.com
+                    </a> 
+                </div>
+                <div class="hero-links">
+                    <a href="https://linkedin.com/in/rana-kamran-suleman" target="_blank" rel="noopener">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Rana-Kamran-Suleman1" target="_blank" rel="noopener">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
         </div>
     </header>
 
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <h2 class="fade-in">About Me</h2>
-            <p class="fade-in stagger-1">Aspiring AI/ML Engineer with strong expertise in Python, Machine Learning, Computer Vision, and Data Science. Passionate about building intelligent systems including chatbots, RAG-based agents, recommendation systems, and face recognition applications. Experienced in designing and deploying AI solutions for real-world tasks, seeking opportunities to apply skills in impactful AI/ML projects. </p>
+            <p class="fade-in stagger-1">Aspiring AI/ML Engineer with strong expertise in Python, Machine Learning, Computer Vision, and Data Science. Passionate about building intelligent systems including chatbots, RAG-based agents, recommendation systems, and face recognition applications. Experienced in designing and deploying AI solutions for real-world tasks, seeking opportunities to apply skills in impactful AI/ML projects.</p>
+            <div class="about-stats fade-in stagger-2">
+                <div class="stat">
+                    <span class="stat-num">11+</span>
+                    <span class="stat-label">AI Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">5+</span>
+                    <span class="stat-label">Awards</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">2</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">20+</span>
+                    <span class="stat-label">Tools & Libs</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
         <div class="container">
             <h2 class="fade-in">AI/ML Projects</h2>
             <div class="project-list">
                 <div class="project-item scale-in stagger-1">
-                    <!-- <img src="images/chatbot.jpg" alt="AI-powered Chatbot" class="project-image"> -->
-                    <h3>CustomerCare AI Assistant</h3>
-                    <p>CustomerCare AI Assistant is an AI-powered email management and customer support automation system that streamlines communication workflows and improves response efficiency. The platform automatically fetches incoming emails and classifies them into categories such as Support, Sales, Complaints, Billing, and General Inquiries using Natural Language Processing (NLP) techniques. It generates concise 2–4 line summaries, drafts context-aware responses, and recommends appropriate action steps for support teams. The system also visualizes the complete workflow—from email retrieval and classification to summary generation, reply drafting, and action recommendations. Additionally, it supports JSON export functionality for seamless integration with CRM, analytics, and customer service platforms.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/chatbot">View Project</a> -->
+                    <div class="project-visual pv-blue">
+                        <svg viewBox="0 0 80 50" fill="none"><rect x="5" y="8" width="70" height="34" rx="4" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><path d="M5 16h70" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="12" cy="12" r="2" fill="rgba(255,255,255,0.4)"/><circle cx="19" cy="12" r="2" fill="rgba(255,255,255,0.25)"/><rect x="12" y="22" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/><rect x="12" y="29" width="20" height="2" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="46" y="20" width="22" height="16" rx="2" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><path d="M50 27l4 4 8-7" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        <span class="pv-num">01</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>CustomerCare AI Assistant</h3>
+                        <p>AI-powered email management and customer support automation that classifies emails into Support, Sales, Complaints, Billing, and General Inquiries using NLP. Generates summaries, drafts context-aware responses, recommends action steps, and supports JSON export for CRM integration.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>NLP</span><span>Email API</span><span>JSON Export</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-item scale-in stagger-2">
-                    <!-- <img src="images/rag-system.png" alt="Retrieval-Augmented Generation (RAG) System" class="project-image"> -->
-                    <h3>VisionAttend AI —  FaceID Attendance Solution</h3>
-                    <p>SmartFace Attendance Management System is an AI-powered attendance solution that automatically detects and recognizes individuals using real-time facial recognition technology. The system utilizes deep learning and CNN-based facial embedding models to accurately verify identities from live camera feeds. It streamlines attendance tracking by recording timestamps automatically, reducing manual effort and minimizing errors. The platform also generates detailed attendance reports and supports CSV export functionality for easy record management, analysis, and integration with existing administrative systems.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/rag-system">View Project</a> -->
+                    <div class="project-visual pv-purple">
+                        <svg viewBox="0 0 80 50" fill="none"><circle cx="40" cy="25" r="14" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><circle cx="40" cy="25" r="8" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="40" cy="20" r="3" fill="rgba(255,255,255,0.35)"/><path d="M33 33c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round"/><rect x="58" y="10" width="16" height="10" rx="2" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><rect x="58" y="24" width="16" height="3" rx="1" fill="rgba(255,255,255,0.15)"/><rect x="58" y="30" width="10" height="3" rx="1" fill="rgba(255,255,255,0.1)"/></svg>
+                        <span class="pv-num">02</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>VisionAttend AI — FaceID Attendance</h3>
+                        <p>AI-powered attendance solution using real-time facial recognition via deep learning and CNN-based facial embeddings. Records timestamps automatically and generates detailed attendance reports with CSV export functionality.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>OpenCV</span><span>CNN</span><span>Deep Learning</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-item scale-in stagger-3">
-                    <!-- <img src="images/proposal-generator.jpg" alt="Upwork Proposal Generator" class="project-image"> -->
-                    <h3>RecommendX Commerce</h3>
-                    <p>RecommendX Commerce is an AI-powered e-commerce recommendation system designed to deliver personalized product suggestions and enhance customer shopping experiences. The platform leverages collaborative filtering and content-based recommendation techniques to analyze user behavior, preferences, and product attributes for accurate recommendations. It integrates a multi-agent AI architecture that enables dynamic query processing, intelligent task delegation, and efficient workflow management across e-commerce operations. The system features recommendation scoring, product ranking, and continuous preference learning to improve recommendation accuracy over time, helping businesses increase customer engagement, conversion rates, and sales performance.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/upwork-proposal-generator">View Project</a> -->
+                    <div class="project-visual pv-orange">
+                        <svg viewBox="0 0 80 50" fill="none"><rect x="6" y="30" width="8" height="14" rx="1" fill="rgba(255,255,255,0.15)"/><rect x="18" y="22" width="8" height="22" rx="1" fill="rgba(255,255,255,0.25)"/><rect x="30" y="16" width="8" height="28" rx="1" fill="rgba(255,255,255,0.35)"/><rect x="42" y="20" width="8" height="24" rx="1" fill="rgba(255,255,255,0.25)"/><rect x="54" y="12" width="8" height="32" rx="1" fill="rgba(255,255,255,0.4)"/><path d="M10 22 L22 16 L34 10 L46 14 L58 8" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="22" r="2" fill="rgba(255,255,255,0.6)"/><circle cx="58" cy="8" r="2" fill="rgba(255,255,255,0.6)"/></svg>
+                        <span class="pv-num">03</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>RecommendX Commerce</h3>
+                        <p>AI-powered e-commerce recommendation system using collaborative filtering and content-based techniques. Integrates multi-agent AI for dynamic query processing, intelligent task delegation, and continuous preference learning to improve accuracy over time.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>Collaborative Filtering</span><span>Multi-Agent</span><span>LLM</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-item scale-in stagger-4">
-                    <!-- <img src="images/research-agent.jpg" alt="Research Agent Pro" class="project-image"> -->
-                    <h3>VaultQuery — Knowledge-Grounded Q&A System</h3>
-                    <p>VaultQuery is an AI-powered Retrieval-Augmented Generation (RAG) system designed to provide accurate, context-aware answers from document-based knowledge sources. Built using LangChain, the platform retrieves relevant information from uploaded documents and combines it with large language models to generate reliable, evidence-based responses. By grounding answers in retrieved context, VaultQuery significantly improves response accuracy, reduces hallucinations, and ensures users receive information directly supported by the source material. The system is ideal for enterprise knowledge management, document search, research assistance, and intelligent information retrieval.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/Research-Agent-Pro">View Project</a> -->
+                    <div class="project-visual pv-teal">
+                        <svg viewBox="0 0 80 50" fill="none"><rect x="8" y="6" width="28" height="38" rx="3" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><rect x="13" y="13" width="18" height="2" rx="1" fill="rgba(255,255,255,0.3)"/><rect x="13" y="19" width="14" height="2" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="13" y="25" width="16" height="2" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="13" y="31" width="10" height="2" rx="1" fill="rgba(255,255,255,0.15)"/><circle cx="58" cy="24" r="12" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><path d="M53 24l3 3 7-6" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 24h4" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        <span class="pv-num">04</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>VaultQuery — Knowledge Q&A System</h3>
+                        <p>RAG system built with LangChain that retrieves relevant information from uploaded documents and combines it with LLMs for accurate, evidence-based responses. Significantly reduces hallucinations by grounding answers in source material.</p>
+                        <div class="project-tags">
+                            <span>LangChain</span><span>RAG</span><span>LLMs</span><span>Vector Store</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-item scale-in stagger-5">
-                    <!-- <img src="images/support-dashboard.jpg" alt="AI Customer Support Automation Dashboard" class="project-image"> -->
-                    <h3>VaultGuard Agent – Secure Banking AI</h3>
-                    <p>VaultGuard Agent is a security-focused AI system designed for banking and financial workflows, incorporating strict input validation and multi-layered guardrails to ensure safe and controlled operations. The system is built to simulate secure banking environments where all user inputs are verified against predefined policies to prevent unauthorized transactions, malicious prompts, and unsafe actions. It implements safety mechanisms such as rule-based filtering, intent validation, and operational constraints to maintain data integrity and system reliability. VaultGuard Agent demonstrates how AI can be responsibly deployed in financial domains by enforcing compliance, security, and controlled decision-making in automated workflows.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/AI-Customer-Support-Automation-Dashboard">View Project</a> -->
+                    <div class="project-visual pv-red">
+                        <svg viewBox="0 0 80 50" fill="none"><path d="M40 6l18 8v12c0 9-8 16-18 19C30 42 22 35 22 26V14L40 6z" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="rgba(255,255,255,0.05)"/><path d="M33 25l4 4 10-9" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="12" r="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><path d="M60 12h4M62 10v4" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        <span class="pv-num">05</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>VaultGuard Agent — Secure Banking AI</h3>
+                        <p>Security-focused AI system for banking workflows with strict input validation and multi-layered guardrails. Implements rule-based filtering, intent validation, and operational constraints for compliance and safe automated decision-making.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>LLM</span><span>Safety</span><span>Banking AI</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-item scale-in stagger-6">
-                    <!-- <img src="images/document-chatbot.jpg" alt="AI Chatbot with RAG for Business Documents" class="project-image"> -->
-                    <h3>ScoutMind — Multi-Source AI Research Aggregator</h3>
-                    <p>ScoutMind is an AI-powered research aggregation system designed to collect, analyze, and synthesize information from multiple reliable sources including web content, Wikipedia, and academic papers. Built with LangChain tool integration, the platform automates the research pipeline by retrieving relevant data, filtering high-quality information, and generating structured, coherent responses. It streamlines complex research tasks by combining multi-source knowledge into a single, easy-to-understand output, making it ideal for academic research, technical analysis, and knowledge discovery workflows.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/AI-Chatbot-with-RAG-for-Business-Documents">View Project</a> -->
+                    <div class="project-visual pv-green">
+                        <svg viewBox="0 0 80 50" fill="none"><circle cx="20" cy="25" r="10" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><circle cx="50" cy="15" r="8" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/><circle cx="55" cy="35" r="7" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M30 22l12-5M30 28l17 5" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3 2"/><circle cx="20" cy="25" r="3" fill="rgba(255,255,255,0.5)"/><circle cx="50" cy="15" r="2.5" fill="rgba(255,255,255,0.4)"/><circle cx="55" cy="35" r="2.5" fill="rgba(255,255,255,0.35)"/></svg>
+                        <span class="pv-num">06</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>ScoutMind — Multi-Source Research AI</h3>
+                        <p>Research aggregation system collecting and synthesizing information from web content, Wikipedia, and academic papers using LangChain tool integration. Automates the full research pipeline into structured, coherent outputs.</p>
+                        <div class="project-tags">
+                            <span>LangChain</span><span>Web Search</span><span>Wikipedia</span><span>NLP</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-item scale-in stagger-1">
-                    <!-- <img src="images/notebook-pdf.jpg" alt="Notebook to PDF Converter" class="project-image"> -->
-                    <h3>DocuDialogue – RAG Chatbot for Business Documents</h3>
-                    <p>DocuDialogue is an AI-powered Retrieval-Augmented Generation (RAG) chatbot designed to enable intelligent querying of business documents. Built using LangChain, the system allows users to interact with enterprise documents through natural language questions and receive precise, context-aware answers. It retrieves relevant sections from uploaded business files and grounds all responses in verified document content, ensuring high relevance, accuracy, and reduced hallucinations. DocuDialogue is ideal for enterprise knowledge bases, policy documents, internal documentation, and business intelligence systems.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/Notebook-to-pdf">View Project</a> -->
+                    <div class="project-visual pv-indigo">
+                        <svg viewBox="0 0 80 50" fill="none"><rect x="6" y="10" width="40" height="30" rx="4" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><rect x="11" y="18" width="24" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/><rect x="11" y="25" width="18" height="3" rx="1.5" fill="rgba(255,255,255,0.15)"/><path d="M52 22h20M52 28h14M52 34h17" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round"/><circle cx="68" cy="16" r="7" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><path d="M65 16h6M68 13v6" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        <span class="pv-num">07</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>DocuDialogue — RAG Business Chatbot</h3>
+                        <p>RAG chatbot built with LangChain enabling intelligent natural language querying of business documents. Grounds all responses in verified document content, ensuring high relevance and reduced hallucinations for enterprise use cases.</p>
+                        <div class="project-tags">
+                            <span>LangChain</span><span>RAG</span><span>NLP</span><span>Enterprise</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="project-item scale-in stagger-2">
-                    <!-- <img src="images/sentiment-analysis.jpg" alt="Sentiment Analysis" class="project-image"> -->
-                    <h3>ToneScan – NLP Sentiment Analysis System</h3>
-                    <p>ToneScan is an NLP-based sentiment analysis system designed to classify and interpret opinions expressed in text data. The platform uses a complete machine learning pipeline that includes text preprocessing, feature engineering, and TF-IDF vectorization to transform raw text into meaningful numerical representations. Supervised learning models are then applied to classify sentiment as positive, negative, or neutral. ToneScan enables efficient opinion mining from user reviews, feedback, and social media data, making it useful for brand monitoring, customer insights, and data-driven decision-making.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/nlp-engineering">View Project</a> -->
+                    <div class="project-visual pv-yellow">
+                        <svg viewBox="0 0 80 50" fill="none"><circle cx="20" cy="30" r="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M16 30c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="rgba(255,200,100,0.7)" stroke-width="1.5" stroke-linecap="round"/><circle cx="40" cy="25" r="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M36 28l8-6" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/><circle cx="60" cy="30" r="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M56 33c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="rgba(100,220,120,0.7)" stroke-width="1.5" stroke-linecap="round"/><path d="M8 18h64" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4 3"/></svg>
+                        <span class="pv-num">08</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>ToneScan — NLP Sentiment Analysis</h3>
+                        <p>Sentiment analysis system using TF-IDF vectorization and supervised ML models to classify text as positive, negative, or neutral. Enables opinion mining from reviews, feedback, and social media for brand monitoring and customer insights.</p>
+                        <div class="project-tags">
+                            <span>NLP</span><span>TF-IDF</span><span>Scikit-Learn</span><span>Sentiment</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-item scale-in stagger-2">
-                    <!-- <img src="images/deep-learning-projects.jpg" alt="Deep Learning Projects" class="project-image"> -->
-                    <h3>Neural Network Research Suite</h3>
-                    <p>Neural Network Research Suite is a deep learning framework designed for building, training, and evaluating neural network models using TensorFlow and Keras. The system focuses on implementing end-to-end machine learning pipelines, including data preprocessing, model architecture design, training, optimization, and performance evaluation. It supports experimentation with different neural network structures for tasks such as classification and prediction, making it suitable for research, learning, and applied AI development. The suite enables efficient model testing and comparison to improve accuracy and performance in deep learning applications.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/nlp-engineering">View Project</a> -->
+                <div class="project-item scale-in stagger-3">
+                    <div class="project-visual pv-pink">
+                        <svg viewBox="0 0 80 50" fill="none"><circle cx="40" cy="25" r="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/><circle cx="18" cy="12" r="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/><circle cx="62" cy="12" r="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/><circle cx="18" cy="38" r="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/><circle cx="62" cy="38" r="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/><path d="M23 14l11 8M57 14l-11 8M23 36l11-8M57 36l-11-8" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="3 2"/></svg>
+                        <span class="pv-num">09</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Neural Network Research Suite</h3>
+                        <p>Deep learning framework for building, training, and evaluating neural network models using TensorFlow and Keras. Supports end-to-end ML pipelines including data preprocessing, model architecture design, and performance evaluation.</p>
+                        <div class="project-tags">
+                            <span>TensorFlow</span><span>Keras</span><span>Deep Learning</span><span>Python</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-item scale-in stagger-2">
-                    <!-- <img src="images/banking-ai-agent.jpg" alt="Banking AI Agent" class="project-image"> -->
-                    <h3>Note2PDF Pro</h3>
-                    <p>Note2PDF Pro is a Python-based utility designed to convert Jupyter Notebooks into clean, well-structured, and professionally formatted PDF documents. The tool simplifies the process of transforming analytical notebooks and code-driven workflows into presentation-ready reports that are easy to share, archive, and present. It leverages Pandas for data cleaning and preprocessing to ensure structured and refined outputs, while FPDF is used to generate high-quality, customizable PDF layouts. Note2PDF Pro is ideal for researchers, data analysts, and developers who need to convert notebook-based insights into polished, professional reports for documentation, presentations, and client delivery.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/nlp-engineering">View Project</a> -->
+                <div class="project-item scale-in stagger-4">
+                    <div class="project-visual pv-cyan">
+                        <svg viewBox="0 0 80 50" fill="none"><rect x="10" y="6" width="32" height="38" rx="3" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><rect x="16" y="14" width="20" height="2" rx="1" fill="rgba(255,255,255,0.25)"/><rect x="16" y="20" width="16" height="2" rx="1" fill="rgba(255,255,255,0.18)"/><rect x="16" y="26" width="18" height="2" rx="1" fill="rgba(255,255,255,0.18)"/><rect x="16" y="32" width="12" height="2" rx="1" fill="rgba(255,255,255,0.12)"/><path d="M50 14l18 11-18 11V14z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                        <span class="pv-num">10</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Note2PDF Pro</h3>
+                        <p>Python utility converting Jupyter Notebooks into professionally formatted PDF documents using Pandas for data cleaning and FPDF for layout generation. Ideal for researchers and data analysts producing client-ready reports.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>Pandas</span><span>FPDF</span><span>Jupyter</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-item scale-in stagger-2">
-                    <!-- <img src="images/ecommerce-multi-agent.jpg" alt="Ecommerce Multi-Agent AI System" class="project-image"> -->
-                    <h3>PropoGenie – Upwork Proposal Generator</h3>
-                    <p>PropoGenie is an AI-powered proposal generation system designed to automate and personalize job applications for freelance platforms such as Upwork. The system analyzes job postings and intelligently generates tailored, high-quality proposals that align with client requirements, project scope, and freelancer skills. By leveraging natural language processing, PropoGenie ensures each proposal is context-aware, persuasive, and professionally structured. It significantly improves submission speed, consistency, and effectiveness, helping freelancers increase their chances of winning projects while reducing manual effort.</p>
-                    <!-- <a href="https://github.com/Rana-Kamran-Suleman1/nlp-engineering">View Project</a> -->
+                <div class="project-item scale-in stagger-5">
+                    <div class="project-visual pv-violet">
+                        <svg viewBox="0 0 80 50" fill="none"><rect x="8" y="8" width="64" height="34" rx="4" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/><rect x="14" y="16" width="38" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/><rect x="14" y="23" width="28" height="2" rx="1" fill="rgba(255,255,255,0.14)"/><rect x="14" y="29" width="32" height="2" rx="1" fill="rgba(255,255,255,0.14)"/><circle cx="60" cy="16" r="5" fill="rgba(168,85,247,0.3)" stroke="rgba(168,85,247,0.6)" stroke-width="1"/><path d="M58 16h4M60 14v4" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        <span class="pv-num">11</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>PropoGenie — Upwork Proposal Generator</h3>
+                        <p>AI-powered proposal generation system for freelance platforms. Analyzes job postings and generates tailored, high-quality proposals using NLP, improving submission speed, consistency, and win rates for freelancers.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>NLP</span><span>LLM</span><span>Automation</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="skills">
+    <section id="skills" class="skills">
         <div class="container">
             <h2 class="fade-in">Skills</h2>
-            <ul>
-                <li class="scale-in stagger-1">AI Engineering | AI Agents & Agentic AI | LLM Fine-Tuning | GenAI & LLMs | Prompt Engineering</li>
-                <li class="scale-in stagger-2">NLP | Computer Vision | Deep Learning | Machine Learning | Data Science</li>
-                <li class="scale-in stagger-3">Python Programming AI/ML/SE TOOLS</li>
-                <li class="scale-in stagger-3">PyTorch | Transformers | BERT, GPT-2 | YOLO | Keras | TensorFlow | spaCy, NLTK</li>
-                <li class="scale-in stagger-3">OpenAI Agents SDK | DeepSeek-R1 | Claude MCP | Llama 3 | Ollama | LangChain</li>
-                <li class="scale-in stagger-4">Scikit-Learn | Streamlit, Plotly, Seaborn, Matplotlib | Pandas, PySpark |NumPy | SQL / NoSQL</li>
-                <li class="scale-in stagger-5">FastAPI | GIT</li>
-                <li class="scale-in stagger-5">Soft Skills: Problem Solving, Team Collaboration, Adaptability</li>
-            </ul>
+            <div class="skills-layout">
+
+                <!-- Left: Core competency bars -->
+                <div class="skills-left fade-in stagger-1">
+                    <p class="skills-col-title">Core Expertise</p>
+                    <div class="core-skills">
+                        <div class="core-skill">
+                            <div class="core-skill-meta">
+                                <div>
+                                    <div class="core-skill-name">AI &amp; LLM Engineering</div>
+                                    <div class="core-skill-sub">Agents · RAG · Fine-tuning · Prompting</div>
+                                </div>
+                                <span class="core-skill-pct">95%</span>
+                            </div>
+                            <div class="skill-track"><div class="skill-fill" style="--fw:95%"></div></div>
+                        </div>
+                        <div class="core-skill">
+                            <div class="core-skill-meta">
+                                <div>
+                                    <div class="core-skill-name">Natural Language Processing</div>
+                                    <div class="core-skill-sub">Transformers · spaCy · NLTK · Sentiment</div>
+                                </div>
+                                <span class="core-skill-pct">90%</span>
+                            </div>
+                            <div class="skill-track"><div class="skill-fill" style="--fw:90%"></div></div>
+                        </div>
+                        <div class="core-skill">
+                            <div class="core-skill-meta">
+                                <div>
+                                    <div class="core-skill-name">Python Engineering</div>
+                                    <div class="core-skill-sub">FastAPI · Streamlit · NumPy · PySpark</div>
+                                </div>
+                                <span class="core-skill-pct">92%</span>
+                            </div>
+                            <div class="skill-track"><div class="skill-fill" style="--fw:92%"></div></div>
+                        </div>
+                        <div class="core-skill">
+                            <div class="core-skill-meta">
+                                <div>
+                                    <div class="core-skill-name">Machine Learning &amp; Data Science</div>
+                                    <div class="core-skill-sub">Scikit-Learn · TensorFlow · PyTorch · Pandas</div>
+                                </div>
+                                <span class="core-skill-pct">87%</span>
+                            </div>
+                            <div class="skill-track"><div class="skill-fill" style="--fw:87%"></div></div>
+                        </div>
+                        <div class="core-skill">
+                            <div class="core-skill-meta">
+                                <div>
+                                    <div class="core-skill-name">Computer Vision</div>
+                                    <div class="core-skill-sub">CNN · YOLO · OpenCV · Face Recognition</div>
+                                </div>
+                                <span class="core-skill-pct">85%</span>
+                            </div>
+                            <div class="skill-track"><div class="skill-fill" style="--fw:85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Tool categories -->
+                <div class="skills-right">
+                    <div class="skill-group scale-in stagger-2">
+                        <h3 class="skill-group-title">LLM Ecosystem</h3>
+                        <div class="skill-tags">
+                            <span>LangChain</span>
+                            <span>OpenAI Agents SDK</span>
+                            <span>Claude MCP</span>
+                            <span>DeepSeek-R1</span>
+                            <span>Llama 3</span>
+                            <span>Ollama</span>
+                        </div>
+                    </div>
+                    <div class="skill-group scale-in stagger-3">
+                        <h3 class="skill-group-title">ML Frameworks</h3>
+                        <div class="skill-tags">
+                            <span>PyTorch</span>
+                            <span>TensorFlow</span>
+                            <span>Keras</span>
+                            <span>Transformers</span>
+                            <span>BERT / GPT-2</span>
+                            <span>YOLO</span>
+                            <span>Scikit-Learn</span>
+                        </div>
+                    </div>
+                    <div class="skill-group scale-in stagger-4">
+                        <h3 class="skill-group-title">NLP &amp; Vision</h3>
+                        <div class="skill-tags">
+                            <span>spaCy</span>
+                            <span>NLTK</span>
+                            <span>OpenCV</span>
+                            <span>TF-IDF</span>
+                            <span>Embeddings</span>
+                        </div>
+                    </div>
+                    <div class="skill-group scale-in stagger-5">
+                        <h3 class="skill-group-title">Data &amp; Dev</h3>
+                        <div class="skill-tags">
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                            <span>PySpark</span>
+                            <span>SQL / NoSQL</span>
+                            <span>FastAPI</span>
+                            <span>Streamlit</span>
+                            <span>Git</span>
+                            <span>Plotly</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <section class="achievements">
+    <section id="achievements" class="achievements">
         <div class="container">
             <h2 class="fade-in">Achievements</h2>
             <ul>
@@ -154,35 +424,56 @@
             </ul>
         </div>
     </section>
+
     <section id="certifications" class="certifications">
-    <div class="container">
-        <h2 class="fade-in">Certifications</h2>
-        <ul>
-            <li class="scale-in stagger-1"><strong>AI & Machine Learning Certification</strong>     –   NAVTTC</li></ul>
-        <ul>   <li class="scale-in stagger-1"><strong>Microsoft Certified: Azure AI Fundamentals</strong>   –     MICROSOFT</li>
-        </ul>
-    </div>
+        <div class="container">
+            <h2 class="fade-in">Certifications</h2>
+            <ul>
+                <li class="scale-in stagger-1">
+                    <div class="cert-content">
+                        <strong>AI & Machine Learning Certification</strong>
+                        <span class="cert-issuer">NAVTTC</span>
+                    </div>
+                </li>
+                <li class="scale-in stagger-2">
+                    <div class="cert-content">
+                        <strong>Microsoft Certified: Azure AI Fundamentals</strong>
+                        <span class="cert-issuer">MICROSOFT</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Rana Kamran Suleman. All Rights Reserved.</p>
+            <p class="footer-name">Rana Kamran Suleman</p>
+            <p class="footer-role">AI Engineer</p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/rana-kamran-suleman" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/Rana-Kamran-Suleman1" target="_blank" rel="noopener">GitHub</a>
+                <a href="mailto:ranakamransuleman@gmail.com">Email</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Rana Kamran Suleman. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
 
     <!-- Image Lightbox Modal -->
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+        <img class="lightbox-content" id="lightbox-img" alt="">
     </div>
 
     <script>
-        // Loading Screen Logic
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const loader = document.getElementById('loader');
                 const mainContent = document.getElementById('main-content');
-
                 loader.classList.add('hidden');
                 mainContent.classList.remove('hidden');
                 mainContent.classList.add('visible');
@@ -192,71 +483,126 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Lightbox functionality for project images
+            // Cursor
+            const cDot  = document.getElementById('c-dot');
+            const cRing = document.getElementById('c-ring');
+            let mX = 0, mY = 0, rX = 0, rY = 0, first = true;
+
+            document.addEventListener('mousemove', (e) => {
+                mX = e.clientX; mY = e.clientY;
+                cDot.style.left = mX + 'px';
+                cDot.style.top  = mY + 'px';
+                if (first) { rX = mX; rY = mY; first = false; cDot.style.opacity = cRing.style.opacity = '1'; }
+            });
+            document.addEventListener('mouseleave', () => { cDot.style.opacity = cRing.style.opacity = '0'; });
+            document.addEventListener('mouseenter', () => { if (!first) cDot.style.opacity = cRing.style.opacity = '1'; });
+
+            (function loop() {
+                rX += (mX - rX) * 0.28;
+                rY += (mY - rY) * 0.28;
+                cRing.style.left = rX + 'px';
+                cRing.style.top  = rY + 'px';
+                requestAnimationFrame(loop);
+            })();
+
+            document.querySelectorAll('a, button, .project-item, .skill-tags span, .stat, .core-skill, .achievements li, .certifications li').forEach(el => {
+                el.addEventListener('mouseenter', () => { cDot.classList.add('hover'); cRing.classList.add('hover'); });
+                el.addEventListener('mouseleave', () => { cDot.classList.remove('hover'); cRing.classList.remove('hover'); });
+            });
+
+            // Scroll progress
+            const scrollProgress = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                scrollProgress.style.width = (scrollTop / docHeight * 100) + '%';
+            });
+
+            // Sticky nav
+            const nav = document.getElementById('sticky-nav');
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            });
+
+            // Mobile hamburger
+            const hamburger = document.getElementById('nav-hamburger');
+            const navLinks = document.getElementById('nav-links');
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+                hamburger.classList.toggle('active');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    hamburger.classList.remove('active');
+                });
+            });
+
+            // Back to top
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                backToTop.classList.toggle('visible', window.scrollY > 400);
+            });
+            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            // Lightbox
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxClose = document.querySelector('.lightbox-close');
-            const projectImages = document.querySelectorAll('.project-image');
-
-            projectImages.forEach(img => {
+            document.querySelectorAll('.project-image').forEach(img => {
                 img.addEventListener('click', function() {
                     lightboxImg.src = this.src;
                     lightboxImg.alt = this.alt;
                     lightbox.classList.add('active');
                 });
             });
+            lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+            lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
 
-            lightboxClose.addEventListener('click', function() {
-                lightbox.classList.remove('active');
-            });
-
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    lightbox.classList.remove('active');
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                    lightbox.classList.remove('active');
-                }
-            });
-
-            // Scroll Animations with Intersection Observer
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
+            // Scroll animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
                 });
-            }, observerOptions);
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => observer.observe(el));
 
-            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
-                observer.observe(el);
-            });
+            // Typewriter animation
+            const roles = ['AI Engineer', 'LLM Specialist', 'RAG Systems Builder', 'Computer Vision Engineer', 'AI Agent Developer'];
+            let roleIndex = 0, charIndex = 0, isDeleting = false;
+            const typingEl = document.getElementById('typing-text');
 
-            // Neural Network Animation
+            function typeRole() {
+                const current = roles[roleIndex];
+                typingEl.textContent = isDeleting
+                    ? current.substring(0, charIndex - 1)
+                    : current.substring(0, charIndex + 1);
+                isDeleting ? charIndex-- : charIndex++;
+
+                if (!isDeleting && charIndex === current.length) {
+                    setTimeout(() => { isDeleting = true; typeRole(); }, 2200);
+                    return;
+                }
+                if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                }
+                setTimeout(typeRole, isDeleting ? 55 : 85);
+            }
+            setTimeout(typeRole, 2400);
+
+            // Neural Network Canvas Animation
             const canvas = document.getElementById('neuron-canvas');
             if (!canvas) return;
-
             const ctx = canvas.getContext('2d');
 
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
                 canvas.height = Math.max(500, window.innerHeight * 0.5);
             }
-
             resizeCanvas();
-
-            window.addEventListener('resize', () => {
-                resizeCanvas();
-                init();
-            });
+            window.addEventListener('resize', () => { resizeCanvas(); init(); });
 
             class Node {
                 constructor() {
@@ -266,43 +612,35 @@
                     this.vy = (Math.random() - 0.5) * 2;
                     this.radius = Math.random() * 2 + 1;
                 }
-
                 update() {
                     this.x += this.vx;
                     this.y += this.vy;
-
                     if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                     if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
                 }
-
                 draw() {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(0, 217, 255, 0.8)';
+                    ctx.fillStyle = 'rgba(168, 85, 247, 0.8)';
                     ctx.fill();
                 }
             }
 
             let nodes = [];
-
             function init() {
                 nodes = [];
                 const nodeCount = Math.floor(canvas.width / 25);
-                for (let i = 0; i < nodeCount; i++) {
-                    nodes.push(new Node());
-                }
+                for (let i = 0; i < nodeCount; i++) nodes.push(new Node());
             }
-
             function connect() {
                 for (let a = 0; a < nodes.length; a++) {
                     for (let b = a; b < nodes.length; b++) {
                         const dx = nodes[a].x - nodes[b].x;
                         const dy = nodes[a].y - nodes[b].y;
                         const distance = Math.sqrt(dx * dx + dy * dy);
-
                         if (distance < 100) {
                             ctx.beginPath();
-                            ctx.strokeStyle = `rgba(0, 217, 255, ${0.15 * (1 - distance / 100)})`;
+                            ctx.strokeStyle = `rgba(168, 85, 247, ${0.15 * (1 - distance / 100)})`;
                             ctx.lineWidth = 0.5;
                             ctx.moveTo(nodes[a].x, nodes[a].y);
                             ctx.lineTo(nodes[b].x, nodes[b].y);
@@ -311,21 +649,29 @@
                     }
                 }
             }
-
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                for (let node of nodes) {
-                    node.update();
-                    node.draw();
-                }
+                for (let node of nodes) { node.update(); node.draw(); }
                 connect();
                 requestAnimationFrame(animate);
             }
-
             init();
             animate();
         });
+
+        // Online/offline status based on PKT (UTC+5) availability 9AM–3AM
+        (function updateAvailStatus() {
+            const dot   = document.getElementById('avail-dot');
+            const label = document.getElementById('avail-label');
+            const now   = new Date();
+            const pktHour = (now.getUTCHours() + 5) % 24;
+            const pktMin  = now.getUTCMinutes();
+            const mins    = pktHour * 60 + pktMin;
+            const online  = mins >= 540 || mins < 180;
+            dot.className   = 'avail-dot ' + (online ? 'online' : 'offline');
+            label.className = online ? 'online' : 'offline';
+            label.textContent = online ? 'Online' : 'Offline';
+        })();
     </script>
 </body>
 </html>
